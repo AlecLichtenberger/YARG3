@@ -1,0 +1,37 @@
+# ========== Unity Specific ==========
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+MemoryCaptures/
+
+# ========== VSCode, Rider, Visual Studio ==========
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+
+# ========== OS Files ==========
+.DS_Store
+Thumbs.db
+
+# ========== Gradle, Android ==========
+.gradle/
+
+# ========== Unity Packages ==========
+/ExportedObj/
+sysinfo.txt
+*.apk
+*.unitypackage
