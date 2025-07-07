@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class SpeedBooster : MonoBehaviour
 {
-    public Vector2 launchForce = new Vector2(5f, 10f); // X and Y force
+    public float launchForce = 10f; // Adjust to control power
+    public Vector2 launchDirection = Vector2.up; // Default: straight up
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Coin"))
+        Rigidbody2D rb = other.attachedRigidbody;
+        if (rb != null)
         {
-            Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = Vector2.zero; // Optional: reset current velocity
-                rb.AddForce(launchForce, ForceMode2D.Impulse);
-            }
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Clear vertical velocity
+            rb.AddForce(launchDirection.normalized * launchForce, ForceMode2D.Impulse);
         }
     }
 }
